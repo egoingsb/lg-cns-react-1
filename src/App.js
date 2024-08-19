@@ -3,7 +3,8 @@ import './App.css';
 function App() {
   return (
     <div>
-      Hello, React!
+      <h1>Counter</h1>
+      <button>+</button> 0
     </div>
   );
 }
