@@ -19,8 +19,14 @@ const [value, setValue] = useState(initValue);
     setValue(callback);
   }
 
+  const inlineStyle = {
+    color:'blue',
+    backgroundColor:'gray',
+    padding: '10px'
+  }
+
   return (
-    <div id="container" style={{fontSize:'2rem'}}>
+    <div id="container" style={inlineStyle}>
       <h1>{title}</h1>
       <button onClick={up}>+</button> 
       <button onClick={down}>-</button> 
