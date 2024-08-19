@@ -20,7 +20,7 @@ const [value, setValue] = useState(initValue);
   }
 
   return (
-    <div id="container">
+    <div id="container" style={{fontSize:'2rem'}}>
       <h1>{title}</h1>
       <button onClick={up}>+</button> 
       <button onClick={down}>-</button> 
