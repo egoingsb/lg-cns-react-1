@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import { Button, ButtonGroup } from '@mui/material';
+import { Button, ButtonGroup, Container } from '@mui/material';
 
 function Counter({title, initValue}){
 const [value, setValue] = useState(initValue);
@@ -20,7 +20,7 @@ const [value, setValue] = useState(initValue);
   }
 
   return (
-    <div id="container" style={inlineStyle}>
+    <Container maxWidth="md">
       <h1 className="heading1">{title}</h1>
       <ButtonGroup variant="contained">
         <Button onClick={up}>+</Button>
@@ -28,7 +28,7 @@ const [value, setValue] = useState(initValue);
         <Button onClick={reset}>0</Button>
       </ButtonGroup>
       {value}
-    </div>
+    </Container>
   )
 }
 
