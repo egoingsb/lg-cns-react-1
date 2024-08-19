@@ -2,10 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function Counter({title, initValue}){
-  // let value = initValue;
-  let valueState = useState(initValue);
-  let value = valueState[0];
-  let setValue = valueState[1];
+  const [value, setValue] = useState(initValue);
   function up(){
     setValue(value + 1)
   }
@@ -21,7 +18,6 @@ function App() {
   return (
     <div>
       <Counter title="카운터" initValue={20}></Counter>
-      <Counter title="불면증 카운터" initValue={40}></Counter>
     </div>
   );
 }
