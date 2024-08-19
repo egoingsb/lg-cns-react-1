@@ -27,7 +27,7 @@ const [value, setValue] = useState(initValue);
 
   return (
     <div id="container" style={inlineStyle}>
-      <h1>{title}</h1>
+      <h1 className="heading1">{title}</h1>
       <button onClick={up}>+</button> 
       <button onClick={down}>-</button> 
       <button onClick={reset}>0</button>
