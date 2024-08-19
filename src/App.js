@@ -13,7 +13,7 @@ function Counter(props){
 function App() {
   return (
     <div>
-      <Counter title="카운터" initValue="20"></Counter>
+      <Counter title="카운터" initValue={20}></Counter>
     </div>
   );
 }
