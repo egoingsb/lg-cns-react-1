@@ -1,28 +1,30 @@
 import { useState } from 'react';
 import './App.css';
+import { Button } from '@mui/material';
 
 function Counter({title, initValue}){
 const [value, setValue] = useState(initValue);
   function reset(){
     setValue(0);
   }
-  // 하면 좋고, 안해도 왠만하면 괜찮은 부분
+  function up(){
+    setValue((prev) => prev+1);
+  }
   function down(){
     setValue((prev) => prev-1);
   }
 
   const inlineStyle = {
     color:'blue',
-    backgroundColor:'gray',
     padding: '10px'
   }
 
   return (
     <div id="container" style={inlineStyle}>
       <h1 className="heading1">{title}</h1>
-      <button onClick={() => setValue(value + 1)}>+</button> 
-      <button onClick={down}>-</button> 
-      <button onClick={reset}>0</button>
+      <Button onClick={up} variant="contained">+</Button>
+      <Button onClick={down} variant="contained">-</Button>
+      <Button onClick={reset} variant="contained">0</Button>
       {value}
     </div>
   )
