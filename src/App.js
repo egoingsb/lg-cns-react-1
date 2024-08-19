@@ -20,7 +20,7 @@ const [value, setValue] = useState(initValue);
   }
 
   return (
-    <div>
+    <div id="container">
       <h1>{title}</h1>
       <button onClick={up}>+</button> 
       <button onClick={down}>-</button> 
