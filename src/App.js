@@ -20,7 +20,7 @@ const [value, setValue] = useState(initValue);
   }
 
   return (
-    <Container maxWidth="md">
+    <div>
       <h1 className="heading1">{title}</h1>
       <ButtonGroup variant="contained">
         <Button onClick={up}>+</Button>
@@ -28,15 +28,15 @@ const [value, setValue] = useState(initValue);
         <Button onClick={reset}>0</Button>
       </ButtonGroup>
       {value}
-    </Container>
+    </div>
   )
 }
 
 function App() {
   return (
-    <div>
+    <Container maxWidth="md">
       <Counter title="카운터" initValue={20}></Counter>
-    </div>
+    </Container>
   );
 }
 
