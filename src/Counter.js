@@ -2,16 +2,20 @@ import {Button, ButtonGroup} from '@mui/material';
 import {useEffect, useState} from 'react';
 export function Counter({title, initValue}){
     const [value, setValue] = useState(initValue);
-
-      // http://localhost:9999/counter에서 데이터를 가져오고
-      // 그 데이터는 json 타입이니까 파싱을 해서 js의 데이터로 변환하고
-      // 그 결과 값인 value를 setValue로 설정한다.
-      // 위의 코드는 단한번 실행되어야 한다.  
-
+      async function fetchCounter(){
+        const resp = await fetch('http://localhost:9999/counter');
+        const result = await resp.json();
+        setValue(result.value);
+      }
       useEffect(()=>{
-        fetch('http://localhost:9999/counter')
-        .then(resp=>resp.json())
-        .then(result=>setValue(result.value));
+        // fetch('http://localhost:9999/counter')
+        // .then(resp=>{
+        //   return resp.json()
+        // })
+        // .then(result=>{
+        //   setValue(result.value)
+        // });
+        fetchCounter();
       }, [])
 
       function reset(){
