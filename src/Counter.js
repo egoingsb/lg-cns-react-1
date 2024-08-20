@@ -10,8 +10,17 @@ export function Counter({title, initValue}){
       useEffect(()=>{
         fetchCounter();
       }, [])
-      function up(){
-        setValue((prev) => prev+1);
+      async function up(){
+        const option = {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({value: value+1})
+        }
+        const resp = await fetch('http://localhost:9999/counter',option);
+        await resp.json();
+        await fetchCounter();
       }
       const inlineStyle = {
         color:'blue',
